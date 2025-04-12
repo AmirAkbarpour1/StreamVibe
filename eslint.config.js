@@ -1,6 +1,27 @@
-import { react, combine, comments, ignores, imports, javascript, jsdoc, jsonc, markdown, node, sortPackageJson, sortTsconfig, stylistic, toml, typescript, unicorn, yaml } from '@antfu/eslint-config'
+import {
+  react,
+  combine,
+  comments,
+  ignores,
+  imports,
+  javascript,
+  jsdoc,
+  jsonc,
+  markdown,
+  node,
+  sortPackageJson,
+  sortTsconfig,
+  stylistic,
+  toml,
+  typescript,
+  unicorn,
+  yaml,
+} from '@antfu/eslint-config'
+
+import pluginRouter from '@tanstack/eslint-plugin-router'
 
 export default combine(
+  ...pluginRouter.configs['flat/recommended'],
   ignores(['**/routeTree.gen.ts', '.vinxi/**/**', '.output/**/**']),
   javascript(),
   comments(),
