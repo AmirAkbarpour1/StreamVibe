@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import "./fonts.css";
+@import "./variables.css";
+
+
+@layer base {
+    html {
+        @apply font-manrope
+    }
+}
