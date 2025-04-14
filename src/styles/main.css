@@ -5,6 +5,6 @@
 
 @layer base {
     html {
-        @apply font-manrope
+        @apply font-manrope text-white bg-black-08
     }
 }
