@@ -14,4 +14,17 @@ export default defineConfig({
       tailwindcss(),
     ],
   },
+  server: {
+    routeRules: {
+      '/_build/assets/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=31536000, immutable',
+        },
+      },
+    },
+    compressPublicAssets: true,
+    prerender: {
+      routes: ['/'],
+    },
+  },
 })

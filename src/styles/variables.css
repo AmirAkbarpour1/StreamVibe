@@ -34,3 +34,21 @@
     --color-gray-97: #F7F7F8;
     --color-gray-99: #FCFCFD;
 }
+
+@custom-variant tablet {
+    @media (width > 1024px) {
+        @slot;
+    }
+}
+
+@custom-variant laptop {
+    @media (width > 1440px) {
+        @slot;
+    }
+}
+
+@custom-variant desktop {
+    @media (width > 1920px) {
+        @slot;
+    }
+}
