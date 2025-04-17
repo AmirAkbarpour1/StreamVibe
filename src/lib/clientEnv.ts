@@ -1,14 +1,13 @@
+import { createEnv } from '@t3-oss/env-core'
 import * as z from '@zod/mini'
 
-const clientEnvSchema = z.object({})
-
-const clientEnvParsed = clientEnvSchema.safeParse(import.meta.env)
-
-if (!clientEnvParsed.success) {
-  console.error('❌ Invalid environment variables:', z.prettifyError(clientEnvParsed.error))
-  throw new Error('⚠️ Invalid environment variables')
-}
-
-const clientEnv = clientEnvParsed.data
+const clientEnv = createEnv({
+  client: {
+    VITE_TMDB_API_READ_TOKEN: z.string().check(z.minLength(1)),
+  },
+  runtimeEnv: import.meta.env,
+  clientPrefix: 'VITE_',
+  emptyStringAsUndefined: true,
+})
 
 export default clientEnv

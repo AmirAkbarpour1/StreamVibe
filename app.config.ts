@@ -21,10 +21,13 @@ export default defineConfig({
           'Cache-Control': 'public, max-age=31536000, immutable',
         },
       },
+      '/**': {
+        headers: {
+          'Cache-Control': 'public, max-age=1800, immutable',
+        },
+      },
     },
     compressPublicAssets: true,
-    prerender: {
-      routes: ['/'],
-    },
+    preset: 'node-server',
   },
 })

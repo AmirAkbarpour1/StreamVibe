@@ -1,10 +1,10 @@
 import { up } from 'up-fetch'
-import serverEnv from '@/lib/serverEnv'
+import clientEnv from '@/lib/clientEnv'
 
 const tmdb = up(fetch, () => ({
   baseUrl: 'https://api.themoviedb.org/3',
   headers: {
-    'Authorization': `Bearer ${serverEnv.TMDB_API_READ_TOKEN}`,
+    'Authorization': `Bearer ${clientEnv.VITE_TMDB_API_READ_TOKEN}`,
     'Content-Type': 'application/json',
   },
 }))
