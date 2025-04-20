@@ -16,7 +16,7 @@ function MenuToggleButton({ isOpen, toggle }: { isOpen: boolean, toggle: () => v
     <button
       onClick={toggle}
       type="button"
-      className="w-12 h-12 bg-black-10 flex items-center justify-center rounded-md border-black-15 border-[3px] tablet:hidden"
+      className="w-12 h-12 bg-black-10 flex items-center justify-center rounded-md border-black-15 border-[3px] laptop:hidden"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -27,7 +27,7 @@ function MenuToggleButton({ isOpen, toggle }: { isOpen: boolean, toggle: () => v
           exit={{ opacity: 0, rotate: 90 }}
           transition={{ duration: 0.2 }}
         >
-          {isOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3BottomRightIcon className="w-6 h-6" />}
+          {isOpen ? <XMarkIcon className="w-6 aspect-square" /> : <Bars3BottomRightIcon className="w-6 aspect-square" />}
         </motion.span>
       </AnimatePresence>
     </button>
@@ -92,7 +92,7 @@ function MobileMenu({ isOpen, routes, toggle }: {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-40 tablet:hidden bg-black-06"
+          className="fixed inset-0 z-40 laptop:hidden bg-black-06"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
