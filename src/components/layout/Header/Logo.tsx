@@ -1,6 +1,6 @@
 import logoMobile from '@/assets/svgs/logo-mobile.svg'
 import logoLaptop from '@/assets/svgs/logo-laptop.svg'
-import logoDesktop from '@/assets/svgs/Logo-desktop.svg'
+import logoDesktop from '@/assets/svgs/logo-desktop.svg'
 
 const logoSizes = {
   mobile: { width: 116.08, height: 35, media: 0 },

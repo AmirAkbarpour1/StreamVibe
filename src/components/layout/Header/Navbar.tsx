@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav>
 
-      <div className="relative bg-black-06 border-[3px] border-black-12 hidden tablet:flex px-6 py-2 rounded-lg items-center">
+      <div className="relative bg-black-06 border-[3px] border-black-12 hidden laptop:flex px-6 py-2 rounded-lg items-center">
         {routes.map((route) => {
           const isActive = route.pathname === location.pathname
 
