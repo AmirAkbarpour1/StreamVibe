@@ -27,7 +27,14 @@ function HeroSection() {
           />
           <img
             src={heroBackground}
-            alt="Background Sliders Duplicate"
+            alt="Background Sliders"
+            className="w-auto object-cover h-[500px] laptop:h-[700px] desktop:h-[860px]"
+            width={1920}
+            height={860}
+          />
+          <img
+            src={heroBackground}
+            alt="Background Sliders"
             className="w-auto object-cover h-[500px] laptop:h-[700px] desktop:h-[860px]"
             width={1920}
             height={860}
