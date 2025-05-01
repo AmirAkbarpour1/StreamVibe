@@ -1,9 +1,10 @@
+import pkgNext from '@next/eslint-plugin-next'
 import {
   react,
   combine,
   comments,
-  ignores,
   imports,
+  ignores,
   javascript,
   jsdoc,
   jsonc,
@@ -18,16 +19,16 @@ import {
   yaml,
 } from '@antfu/eslint-config'
 
-import pluginRouter from '@tanstack/eslint-plugin-router'
+const { flatConfig: pluginNext } = pkgNext
 
-export default combine(
-  ...pluginRouter.configs['flat/recommended'],
-  ignores(['**/routeTree.gen.ts', '.vinxi/**/**', '.output/**/**']),
+const eslintConfig = combine(
+  pluginNext.coreWebVitals,
   javascript(),
   comments(),
   node(),
   jsdoc(),
   imports(),
+  ignores(),
   unicorn(),
   typescript(),
   stylistic(),
@@ -54,3 +55,5 @@ export default combine(
     },
   },
 )
+
+export default eslintConfig

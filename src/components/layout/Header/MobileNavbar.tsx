@@ -1,10 +1,13 @@
+'use client'
+
 import { AnimatePresence, motion } from 'motion/react'
-import { useState } from 'react'
-import { Link, useLocation } from '@tanstack/react-router'
+import { useIsClient, useToggle } from 'usehooks-ts'
+import Link from 'next/link'
 import Buttons from '@/components/layout/Header/Buttons'
 import { cn } from '@/lib/cn'
 import { createPortal } from 'react-dom'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
 
 interface Route {
   pathname: string
@@ -53,7 +56,7 @@ function MobileNavItem({ route, isActive, index, onClick }: {
       }}
     >
       <Link
-        to={route.pathname}
+        href={route.pathname}
         onClick={onClick}
         className="relative p-4 rounded-lg block"
       >
@@ -83,9 +86,10 @@ function MobileMenu({ isOpen, routes, toggle }: {
   routes: Route[]
   toggle: () => void
 }) {
-  const location = useLocation()
+  const pathname = usePathname()
+  const isClient = useIsClient()
 
-  if (typeof document === 'undefined')
+  if (!isClient)
     return null
 
   return createPortal(
@@ -104,7 +108,7 @@ function MobileMenu({ isOpen, routes, toggle }: {
                 key={route.pathname}
                 route={route}
                 index={index}
-                isActive={route.pathname === location.pathname}
+                isActive={route.pathname === pathname}
                 onClick={toggle}
               />
             ))}
@@ -127,8 +131,7 @@ function MobileMenu({ isOpen, routes, toggle }: {
 }
 
 function MobileNavbar({ routes }: { routes: Route[] }) {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggle = () => setIsOpen(prev => !prev)
+  const [isOpen, toggle] = useToggle()
 
   return (
     <>

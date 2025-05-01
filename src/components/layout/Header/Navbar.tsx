@@ -1,4 +1,6 @@
-import { Link, useLocation } from '@tanstack/react-router'
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
 import { cn } from '@/lib/cn'
 import MobileNavbar from '@/components/layout/Header/MobileNavbar'
@@ -11,19 +13,19 @@ const routes = [
 ]
 
 function Navbar() {
-  const location = useLocation()
+  const pathname = usePathname()
 
   return (
     <nav>
 
       <div className="relative bg-black-06 border-[3px] border-black-12 hidden laptop:flex px-6 py-2 rounded-lg items-center">
         {routes.map((route) => {
-          const isActive = route.pathname === location.pathname
+          const isActive = route.pathname === pathname
 
           return (
             <Link
               key={route.pathname}
-              to={route.pathname}
+              href={route.pathname}
               className={cn(
                 'px-5 py-3 rounded-lg transition-colors duration-200 relative',
                 isActive ? 'text-white' : 'text-gray-75 hover:text-gray-90',
