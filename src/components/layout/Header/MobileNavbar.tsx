@@ -14,12 +14,18 @@ interface Route {
   name: string
 }
 
-function MenuToggleButton({ isOpen, toggle }: { isOpen: boolean, toggle: () => void }) {
+function MenuToggleButton({
+  isOpen,
+  toggle,
+}: {
+  isOpen: boolean
+  toggle: () => void
+}) {
   return (
     <button
       onClick={toggle}
       type="button"
-      className="w-12 h-12 bg-black-10 flex items-center justify-center rounded-md border-black-15 border-[3px] laptop:hidden"
+      className="bg-black-10 border-black-15 laptop:hidden flex h-12 w-12 items-center justify-center rounded-md border-[3px]"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -28,16 +34,27 @@ function MenuToggleButton({ isOpen, toggle }: { isOpen: boolean, toggle: () => v
           initial={{ opacity: 0, rotate: -90 }}
           animate={{ opacity: 1, rotate: 0 }}
           exit={{ opacity: 0, rotate: 90 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
         >
-          {isOpen ? <XMarkIcon className="w-6 aspect-square" /> : <Bars3BottomRightIcon className="w-6 aspect-square" />}
+          {isOpen
+            ? (
+                <XMarkIcon className="aspect-square w-6" />
+              )
+            : (
+                <Bars3BottomRightIcon className="aspect-square w-6" />
+              )}
         </motion.span>
       </AnimatePresence>
     </button>
   )
 }
 
-function MobileNavItem({ route, isActive, index, onClick }: {
+function MobileNavItem({
+  route,
+  isActive,
+  index,
+  onClick,
+}: {
   route: Route
   isActive: boolean
   index: number
@@ -58,12 +75,12 @@ function MobileNavItem({ route, isActive, index, onClick }: {
       <Link
         href={route.pathname}
         onClick={onClick}
-        className="relative p-4 rounded-lg block"
+        className="relative block rounded-lg p-4"
       >
         <p
           className={cn(
-            'relative z-10 desktop:text-lg',
-            isActive ? 'text-white font-medium' : 'text-gray-75',
+            'desktop:text-lg relative z-10',
+            isActive ? 'font-medium text-white' : 'text-gray-75',
           )}
         >
           {route.name}
@@ -72,7 +89,7 @@ function MobileNavItem({ route, isActive, index, onClick }: {
         {isActive && (
           <motion.div
             layoutId="mobileActiveNavItem"
-            className="absolute inset-0 bg-black-10 rounded-lg backdrop-blur-sm"
+            className="bg-black-10 absolute inset-0 rounded-lg backdrop-blur-sm"
             transition={{ type: 'spring', stiffness: 500, damping: 30 }}
           />
         )}
@@ -81,7 +98,11 @@ function MobileNavItem({ route, isActive, index, onClick }: {
   )
 }
 
-function MobileMenu({ isOpen, routes, toggle }: {
+function MobileMenu({
+  isOpen,
+  routes,
+  toggle,
+}: {
   isOpen: boolean
   routes: Route[]
   toggle: () => void
@@ -96,13 +117,13 @@ function MobileMenu({ isOpen, routes, toggle }: {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-40 laptop:hidden bg-black-06"
+          className="laptop:hidden bg-black-06 fixed inset-0 z-40"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 250 }}
         >
-          <div className="p-4 flex flex-col gap-2 mt-[102px]">
+          <div className="mt-[102px] flex flex-col gap-2 p-4">
             {routes.map((route, index) => (
               <MobileNavItem
                 key={route.pathname}
@@ -119,7 +140,7 @@ function MobileMenu({ isOpen, routes, toggle }: {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ delay: 0.05 * routes.length }}
-            className="mt-4 p-4 border-t border-black-15 border-opacity-60"
+            className="border-black-15 border-opacity-60 mt-4 border-t p-4"
           >
             <Buttons isMobile />
           </motion.div>

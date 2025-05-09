@@ -3,21 +3,21 @@ import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 function Buttons({ isMobile = false }) {
   if (!isMobile) {
     return (
-      <div className="hidden laptop:flex gap-4 cursor-pointer">
-        <MagnifyingGlassIcon className="w-6 aspect-square hover:stroke-red-55 hover:scale-105 transition-all duration-300" />
-        <BellIcon className="w-6 aspect-square hover:stroke-red-55 hover:scale-105 transition-all duration-300" />
+      <div className="laptop:flex hidden cursor-pointer gap-4">
+        <MagnifyingGlassIcon className="hover:stroke-red-55 aspect-square w-6 transition-all duration-300 hover:scale-105" />
+        <BellIcon className="hover:stroke-red-55 aspect-square w-6 transition-all duration-300 hover:scale-105" />
       </div>
     )
   }
 
   return (
     <>
-      <div className="flex items-center gap-4 mb-4">
-        <MagnifyingGlassIcon className="w-6 aspect-square" />
+      <div className="mb-4 flex items-center gap-4">
+        <MagnifyingGlassIcon className="aspect-square w-6" />
         <p className="text-gray-75">Search</p>
       </div>
       <div className="flex items-center gap-4">
-        <BellIcon className="w-6 aspect-square" />
+        <BellIcon className="aspect-square w-6" />
         <p className="text-gray-75">Notifications</p>
       </div>
     </>
