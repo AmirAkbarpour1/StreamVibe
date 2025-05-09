@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'motion/react'
@@ -17,8 +18,7 @@ function Navbar() {
 
   return (
     <nav>
-
-      <div className="relative bg-black-06 border-[3px] border-black-12 hidden laptop:flex px-6 py-2 rounded-lg items-center">
+      <div className="bg-black-06 border-black-12 laptop:flex relative hidden items-center rounded-lg border-[3px] px-6 py-2">
         {routes.map((route) => {
           const isActive = route.pathname === pathname
 
@@ -27,14 +27,14 @@ function Navbar() {
               key={route.pathname}
               href={route.pathname}
               className={cn(
-                'px-5 py-3 rounded-lg transition-colors duration-200 relative',
+                'relative rounded-lg px-5 py-3 transition-colors duration-300',
                 isActive ? 'text-white' : 'text-gray-75 hover:text-gray-90',
               )}
             >
               <p className="relative z-10">{route.name}</p>
               {isActive && (
                 <motion.div
-                  className="absolute inset-0 bg-black-10 rounded-lg"
+                  className="bg-black-10 absolute inset-0 rounded-lg"
                   layoutId="activeNavItem"
                   transition={{
                     type: 'spring',
