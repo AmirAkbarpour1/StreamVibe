@@ -1,9 +1,22 @@
-@import "tailwindcss";
-@import "./variables.css";
-
+@import 'tailwindcss';
+@import './variables.css';
 
 @layer base {
-    html {
-        @apply font-manrope text-white bg-black-08
-    }
+  html {
+    @apply font-manrope bg-black-08 text-white;
+  }
+}
+
+@layer components {
+  .title {
+    @apply laptop:text-[28px] desktop:text-[38px] text-2xl font-bold text-white;
+  }
+
+  .description {
+    @apply text-gray-60 laptop:mt-2.5 laptop:text-base desktop:text-lg desktop:mt-3.5 mt-2 text-sm;
+  }
+
+  .button {
+    @apply bg-red-45 desktop:py-4.5 flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-white;
+  }
 }
