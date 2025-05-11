@@ -19,9 +19,7 @@ function DeviceCard({ device }: { device: Device }) {
           {device.name}
         </h3>
       </div>
-      <p className="description laptop:mt-6 desktop:mt-7.5 mt-5">
-        {device.description}
-      </p>
+      <p className="description desktop:mt-3.5 mt-2.5">{device.description}</p>
     </div>
   )
 }
