@@ -47,7 +47,9 @@ export default function Slider({
         >
           <div>
             {title && <h2 className="title">{title}</h2>}
-            {description && <p className="description">{description}</p>}
+            {description && (
+              <p className="description desktop:mt-3.5 mt-2.5">{description}</p>
+            )}
           </div>
           {showNavigation && (
             <div className="laptop:flex bg-black-06 border-black-12 desktop:p-4 desktop:rounded-xl desktop:gap-4 hidden flex-row items-center gap-3 rounded-[10px] border p-3">

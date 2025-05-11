@@ -1,6 +1,7 @@
 import { devices } from '@/constants/devices'
 import type { Device } from '@/constants/devices'
 import Image from 'next/image'
+import * as motion from 'motion/react-client'
 
 function DeviceCard({ device }: { device: Device }) {
   return (
@@ -19,7 +20,9 @@ function DeviceCard({ device }: { device: Device }) {
           {device.name}
         </h3>
       </div>
-      <p className="description desktop:mt-3.5 mt-2.5">{device.description}</p>
+      <p className="description desktop:mt-7.5 laptop:mt-6 mt-5">
+        {device.description}
+      </p>
     </div>
   )
 }
@@ -30,15 +33,30 @@ function Devices() {
       <h2 className="title">
         We Provide you streaming experience across various devices.
       </h2>
-      <p className="description">
+      <p className="description desktop:mt-3.5 mt-2.5">
         With StreamVibe, you can enjoy your favorite movies and TV shows
         anytime, anywhere. Our platform is designed to be compatible with a wide
         range of devices, ensuring that you never miss a moment of
         entertainment.
       </p>
       <div className="desktop:gap-7.5 laptop:mt-15 desktop:mt-20 laptop:grid-cols-3 tablet:grid-cols-2 mt-10 grid grid-cols-1 gap-5">
-        {devices.map(device => (
-          <DeviceCard key={device.name} device={device} />
+        {devices.map((device, index) => (
+          <motion.div
+            key={device.name}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: 'easeInOut',
+            }}
+          >
+            <DeviceCard device={device} />
+          </motion.div>
         ))}
       </div>
     </div>

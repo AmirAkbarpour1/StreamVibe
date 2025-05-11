@@ -17,7 +17,7 @@
   }
 
   .description {
-    @apply text-gray-60 laptop:mt-2.5 laptop:text-base desktop:text-lg desktop:mt-3.5 mt-2 text-sm;
+    @apply text-gray-60 laptop:text-base desktop:text-lg text-sm;
   }
 
   .button {
