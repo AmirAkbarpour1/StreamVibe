@@ -2,6 +2,10 @@
 @import './variables.css';
 
 @layer base {
+  * {
+    @apply box-border;
+  }
+
   html {
     @apply font-manrope bg-black-08 text-white;
   }
@@ -18,5 +22,9 @@
 
   .button {
     @apply bg-red-45 desktop:py-4.5 flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-white;
+  }
+
+  .container {
+    @apply laptop:px-20 desktop:px-40.5 mx-auto px-4;
   }
 }

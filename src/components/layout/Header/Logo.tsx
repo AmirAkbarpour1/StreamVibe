@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '@/assets/svgs/logo-mobile.svg'
+import logo from '@/assets/svgs/logo.svg'
 
 function Logo() {
   return (

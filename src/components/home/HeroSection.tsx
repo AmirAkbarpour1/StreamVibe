@@ -62,10 +62,21 @@ function HeroSection() {
         </h1>
       </motion.div>
 
-      <p className="desktop:text-lg desktop:mt-6 mt-4 text-center text-sm text-gray-100">
-        StreamVibe is the best streaming experience for watching your favorite
-        movies and shows on demand, anytime, anywhere.
-      </p>
+      <div className="laptop:max-w-1/2 tablet:max-w-3/4 mx-auto flex items-center justify-center">
+        <p className="description laptop:hidden mt-4 text-center">
+          StreamVibe is the best streaming experience for watching your favorite
+          movies and shows on demand, anytime, anywhere.
+        </p>
+
+        <p className="desktop:mt-6 description laptop:block mt-4 hidden text-center">
+          StreamVibe is the best streaming experience for watching your favorite
+          movies and shows on demand, anytime, anywhere. With StreamVibe, you
+          can enjoy a wide variety of content, including the latest
+          blockbusters, classic movies, popular TV shows, and more. You can also
+          create your own watchlists, so you can easily find the content you
+          want to watch.
+        </p>
+      </div>
 
       <button type="button" className="button mx-auto mt-8">
         <PlayIcon className="desktop:w-7 aspect-square w-6" />

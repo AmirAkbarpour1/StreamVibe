@@ -73,7 +73,7 @@ async function Categories() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       viewport={{ once: true }}
-      className="mt-5 px-4"
+      className="laptop:mt-37.5 desktop:mt-50 mt-25"
     >
       <Slider
         title="Explore our wide variety of categories"

@@ -44,12 +44,7 @@ export default function Slider({
   }
 
   return (
-    <div
-      className={cn(
-        'laptop:px-20 desktop:px-[162px] mb-5 w-full px-4',
-        className,
-      )}
-    >
+    <div className={cn('container mb-5 w-full', className)}>
       {(title || description) && (
         <div
           className={cn('flex items-center justify-between', headerClassName)}

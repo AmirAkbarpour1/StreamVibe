@@ -36,6 +36,12 @@
 }
 
 /* Breakpoints */
+@custom-variant tablet {
+  @media (width > 768px) {
+    @slot;
+  }
+}
+
 @custom-variant laptop {
   @media (width > 1440px) {
     @slot;

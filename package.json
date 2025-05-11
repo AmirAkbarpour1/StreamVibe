@@ -9,7 +9,7 @@
     "lint": "pnpx eslint",
     "lint:fix": "pnpx eslint --fix",
     "prettier": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -40,7 +40,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
-    "husky": "^9.1.7",
+    "husky": "^8.0.0",
     "install": "^0.13.0",
     "lint-staged": "^15.5.2",
     "prettier": "^3.5.3",
