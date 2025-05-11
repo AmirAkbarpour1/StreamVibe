@@ -39,10 +39,6 @@ export default function Slider({
   const prevButtonClass = `swiper-button-prev-${paginationName}`
   const nextButtonClass = `swiper-button-next-${paginationName}`
 
-  if (!isClient) {
-    return null
-  }
-
   return (
     <div className={cn('container mb-5 w-full', className)}>
       {(title || description) && (
@@ -106,7 +102,11 @@ export default function Slider({
             },
           },
         }}
-        className={cn('mt-10 w-full', swiperClassName)}
+        className={cn(
+          'mt-10 w-full',
+          swiperClassName,
+          !isClient && 'opacity-0',
+        )}
         navigation={
           showNavigation
             ? {
