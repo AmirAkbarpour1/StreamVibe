@@ -9,6 +9,10 @@
   html {
     @apply font-manrope bg-black-08 text-white;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {

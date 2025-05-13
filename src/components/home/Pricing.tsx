@@ -57,7 +57,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="laptop:mt-0 desktop:p-2.5 desktop:rounded-[10px] bg-black-06 border-black-15 *:desktop:px-6 *:desktop:py-3.5 *:text-gray-60 mt-5 flex w-fit rounded-lg border p-2 *:relative *:cursor-pointer *:rounded-md *:px-5 *:py-3">
+        <div className="laptop:mt-0 desktop:p-2.5 desktop:rounded-[10px] bg-black-06 border-black-15 *:desktop:px-6 *:desktop:py-3.5 *:text-gray-60 mt-5 flex w-fit rounded-lg border p-2 *:relative *:rounded-md *:px-5 *:py-3">
           <button
             type="button"
             onClick={() => setPlan('monthly')}

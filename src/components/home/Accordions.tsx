@@ -22,7 +22,7 @@ function AccordionItem({
       <button
         type="button"
         onClick={() => toggleAccordion(index)}
-        className="flex w-full cursor-pointer items-center justify-between"
+        className="flex w-full items-center justify-between"
       >
         <div className="desktop:gap-6 flex items-center justify-center gap-4">
           <span className="desktop:text-xl laptop:p-4 laptop:rounded-lg desktop:p-5 bg-black-12 border-black-15 desktop:rounded-[10px] flex items-center rounded-md border p-3 font-semibold">
