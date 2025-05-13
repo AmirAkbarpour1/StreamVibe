@@ -5,6 +5,7 @@ import HeroSection from '@/components/home/HeroSection'
 import Categories from '@/components/home/Categories'
 import Devices from '@/components/home/Devices'
 import FAQ from '@/components/home/FAQ'
+import Pricing from '@/components/home/Pricing'
 
 export default async function Home() {
   cacheLife('minutes')
@@ -15,6 +16,7 @@ export default async function Home() {
       <Categories />
       <Devices />
       <FAQ />
+      <Pricing />
     </main>
   )
 }

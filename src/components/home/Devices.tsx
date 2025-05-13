@@ -29,7 +29,7 @@ function DeviceCard({ device }: { device: Device }) {
 
 function Devices() {
   return (
-    <div className="laptop:mt-30 desktop:mt-37.5 container mt-12.5">
+    <div className="laptop:mt-30 desktop:mt-37.5 safe-area mt-12.5">
       <h2 className="title">
         We Provide you streaming experience across various devices.
       </h2>

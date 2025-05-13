@@ -40,7 +40,7 @@ export default function Slider({
   const nextButtonClass = `swiper-button-next-${paginationName}`
 
   return (
-    <div className={cn('container mb-5 w-full', className)}>
+    <div className={cn('safe-area mb-5', className)}>
       {(title || description) && (
         <div
           className={cn('flex items-center justify-between', headerClassName)}
