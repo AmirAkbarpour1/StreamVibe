@@ -6,6 +6,7 @@ import '@/styles/main.css'
 import localFont from 'next/font/local'
 import { cn } from '@/lib/cn'
 import Header from '@/components/layout/Header/Header'
+import Footer from '@/components/layout/footer/Footer'
 
 const manrope = localFont({
   src: [
@@ -45,6 +46,7 @@ export default async function RootLayout({
       <body className={cn(manrope.variable)}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   )

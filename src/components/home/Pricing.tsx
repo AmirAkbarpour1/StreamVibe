@@ -46,7 +46,10 @@ function PricingCard({
 function Pricing() {
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly')
   return (
-    <div className="laptop:mt-33.5 desktop:mt-37.5 safe-area mt-20">
+    <div
+      className="laptop:mt-33.5 desktop:mt-37.5 safe-area mt-20"
+      id="pricing"
+    >
       <div className="laptop:flex items-center justify-between">
         <div>
           <h2 className="title">Choose the plan that's right for you</h2>

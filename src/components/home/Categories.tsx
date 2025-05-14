@@ -74,6 +74,7 @@ async function Categories() {
       transition={{ duration: 0.5, delay: 0.1 }}
       viewport={{ once: true }}
       className="laptop:mt-37.5 desktop:mt-50 mt-25"
+      id="categories"
     >
       <Slider
         title="Explore our wide variety of categories"

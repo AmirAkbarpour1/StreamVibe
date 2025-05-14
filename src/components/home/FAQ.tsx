@@ -4,7 +4,7 @@ const Accordions = dynamic(() => import('@/components/home/Accordions'))
 
 function FAQ() {
   return (
-    <div className="laptop:mt-30 desktop:mt-37.5 safe-area mt-20">
+    <div className="laptop:mt-30 desktop:mt-37.5 safe-area mt-20" id="FAQ">
       <div className="laptop:flex items-center justify-between">
         <div>
           <h2 className="title">Frequently Asked Questions</h2>

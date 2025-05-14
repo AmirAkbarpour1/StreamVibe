@@ -1,46 +1,46 @@
-import phone from '@/assets/svgs/phone.svg'
-import tablet from '@/assets/svgs/tablet.svg'
-import tv from '@/assets/svgs/tv.svg'
-import laptop from '@/assets/svgs/laptop.svg'
-import console from '@/assets/svgs/console.svg'
-import vr from '@/assets/svgs/vr.svg'
+import Phone from '@/assets/svgs/phone.svg'
+import Tablet from '@/assets/svgs/tablet.svg'
+import Tv from '@/assets/svgs/tv.svg'
+import Laptop from '@/assets/svgs/laptop.svg'
+import Console from '@/assets/svgs/console.svg'
+import Vr from '@/assets/svgs/vr.svg'
 
 export const devices = [
   {
     name: 'Smartphones',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: phone,
+    icon: Phone,
   },
   {
     name: 'Tablet',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: tablet,
+    icon: Tablet,
   },
   {
     name: 'Smart TV',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: tv,
+    icon: Tv,
   },
   {
     name: 'Laptops',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: laptop,
+    icon: Laptop,
   },
   {
     name: 'Gaming Consoles',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: console,
+    icon: Console,
   },
   {
     name: 'VR Headsets',
     description:
       'StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store',
-    icon: vr,
+    icon: Vr,
   },
 ]
 
