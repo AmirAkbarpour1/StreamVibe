@@ -28,7 +28,7 @@ function AccordionItem({
           <span className="desktop:text-xl laptop:p-4 laptop:rounded-lg desktop:p-5 bg-black-12 border-black-15 desktop:rounded-[10px] flex items-center rounded-md border p-3 font-semibold">
             {item.id}
           </span>
-          <p className="laptop:text-xl desktop:text-[22px] text-lg font-medium">
+          <p className="laptop:text-xl desktop:text-[22px] text-start text-lg font-medium">
             {item.title}
           </p>
         </div>
