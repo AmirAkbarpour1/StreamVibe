@@ -8,7 +8,7 @@ import MobileNavbar from '@/components/layout/Header/MobileNavbar'
 
 const routes = [
   { pathname: '/', name: 'Home' },
-  { pathname: '/movies', name: 'Movies' },
+  { pathname: '/movies-shows', name: 'Movies & Shows' },
   { pathname: '/support', name: 'Support' },
   { pathname: '/subscriptions', name: 'Subscriptions' },
 ]

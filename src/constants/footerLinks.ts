@@ -26,8 +26,30 @@ export const footerLinks = [
     ],
   },
   {
+    title: 'Movies',
+    href: '/movies-shows?type=movie',
+    pathes: [
+      {
+        name: 'Gernes',
+        path: '#gernes',
+      },
+      {
+        name: 'Trending',
+        path: '#trending',
+      },
+      {
+        name: 'New Release',
+        path: '#new-release',
+      },
+      {
+        name: 'Popular',
+        path: '#popular',
+      },
+    ],
+  },
+  {
     title: 'Shows',
-    href: '/shows',
+    href: '/movies-shows?type=show',
     pathes: [
       {
         name: 'Gernes',
@@ -58,28 +80,6 @@ export const footerLinks = [
       {
         name: 'Features',
         path: '#features',
-      },
-    ],
-  },
-  {
-    title: 'Movies',
-    href: '/movies',
-    pathes: [
-      {
-        name: 'Gernes',
-        path: '#gernes',
-      },
-      {
-        name: 'Trending',
-        path: '#trending',
-      },
-      {
-        name: 'New Release',
-        path: '#new-release',
-      },
-      {
-        name: 'Popular',
-        path: '#popular',
       },
     ],
   },
