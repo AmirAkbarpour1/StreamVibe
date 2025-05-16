@@ -14,9 +14,7 @@ function FAQ() {
           </p>
         </div>
         <button type="button" className="button laptop:mt-0 mt-5">
-          <p className="desktop:text-lg text-sm font-semibold">
-            Ask a Question
-          </p>
+          <p>Ask a Question</p>
         </button>
       </div>
       <Accordions />

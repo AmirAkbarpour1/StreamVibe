@@ -79,10 +79,8 @@ function HeroSection() {
       </div>
 
       <button type="button" className="button mx-auto mt-8">
-        <PlayIcon className="desktop:w-7 aspect-square w-6" />
-        <p className="desktop:text-lg text-sm font-semibold">
-          Start Watching Now
-        </p>
+        <PlayIcon className="desktop:w-7 w-6" />
+        <p>Start Watching Now</p>
       </button>
     </div>
   )

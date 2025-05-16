@@ -36,6 +36,7 @@ function FooterLinks() {
               key={socialLink.name}
               href={socialLink.href}
               className="bg-black-10 border-black-15 desktop:p-4 desktop:rounded-lg mt-4 rounded-md border p-3 transition-all duration-300 hover:scale-105"
+              aria-label={socialLink.name}
             >
               <socialLink.icon width={20} height={20} className="desktop:w-6" />
             </Link>

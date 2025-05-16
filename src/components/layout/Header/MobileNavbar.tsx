@@ -38,10 +38,10 @@ function MenuToggleButton({
         >
           {isOpen
             ? (
-                <XMarkIcon className="aspect-square w-6" />
+                <XMarkIcon className="w-6" />
               )
             : (
-                <Bars3BottomRightIcon className="aspect-square w-6" />
+                <Bars3BottomRightIcon className="w-6" />
               )}
         </motion.span>
       </AnimatePresence>

@@ -32,7 +32,7 @@ function AccordionItem({
             {item.title}
           </p>
         </div>
-        <IconSwitcher isExpanded={expandedIndex === index}>
+        <IconSwitcher isActive={expandedIndex === index}>
           <PlusIcon className="desktop:w-7.5 w-6" />
           <MinusIcon className="desktop:w-7.5 w-6" />
         </IconSwitcher>

@@ -60,7 +60,7 @@ export default function Slider({
                   'cursor-pointer transition-all duration-300 [&.swiper-button-disabled]:cursor-not-allowed [&.swiper-button-disabled]:opacity-50',
                 )}
               >
-                <ArrowLeftIcon className="laptop:w-6 desktop:w-7 group-hover:text-red-55 aspect-square transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
+                <ArrowLeftIcon className="laptop:w-6 desktop:w-7 group-hover:text-red-55 transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
               </div>
               <div
                 className={cn(
@@ -77,7 +77,7 @@ export default function Slider({
                   'cursor-pointer transition-all duration-300 [&.swiper-button-disabled]:cursor-not-allowed [&.swiper-button-disabled]:opacity-50',
                 )}
               >
-                <ArrowRightIcon className="laptop:w-6 desktop:w-7 group-hover:text-red-55 aspect-square transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
+                <ArrowRightIcon className="laptop:w-6 desktop:w-7 group-hover:text-red-55 transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
               </div>
             </div>
           )}

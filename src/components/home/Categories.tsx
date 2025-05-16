@@ -32,7 +32,7 @@ function genreComponent(genre: GenreWithMovies) {
         <p className="laptop:text-base desktop:text-lg group-hover:text-gray-65 text-sm font-semibold transition-all duration-300">
           {genre.genre}
         </p>
-        <ArrowRightIcon className="laptop:w-6 desktop:w-7.5 group-hover:text-red-45 aspect-square w-5 text-white transition-all duration-300 group-hover:scale-110" />
+        <ArrowRightIcon className="laptop:w-6 desktop:w-7.5 group-hover:text-red-45 w-5 text-white transition-all duration-300 group-hover:scale-110" />
       </div>
     </Link>
   )

@@ -9,7 +9,7 @@ import Pricing from '@/components/home/Pricing'
 import CTA from '@/components/home/CTA'
 
 export default async function Home() {
-  cacheLife('minutes')
+  cacheLife('hours')
 
   return (
     <main>

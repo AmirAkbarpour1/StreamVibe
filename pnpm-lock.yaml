@@ -17,9 +17,6 @@ importers:
       '@next/bundle-analyzer':
         specifier: ^15.3.2
         version: 15.3.2
-      '@svg-use/react':
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@svgr/webpack':
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.8.3)
@@ -41,6 +38,9 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      react-player:
+        specifier: ^2.16.0
+        version: 2.16.0(react@19.1.0)
       swiper:
         specifier: ^11.2.6
         version: 11.2.6
@@ -69,9 +69,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 15.4.0-canary.17
         version: 15.4.0-canary.17
-      '@svg-use/webpack':
-        specifier: ^1.0.0
-        version: 1.0.0(@svg-use/react@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.4
@@ -1658,13 +1655,6 @@ packages:
         integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==,
       }
 
-  '@rgrove/parse-xml@4.2.0':
-    resolution:
-      {
-        integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==,
-      }
-    engines: { node: '>=14.0.0' }
-
   '@rtsao/scc@1.1.0':
     resolution:
       {
@@ -1685,32 +1675,6 @@ packages:
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
       eslint: '>=9.0.0'
-
-  '@svg-use/core@1.0.0':
-    resolution:
-      {
-        integrity: sha512-O46PHvvUraByhR7ucDYl4qMSg507tJCEc2gc29Cp/LjnbF+ykC4QY2eNPf9xnAywiGKkSnqAb3bJlFtpVhg3EQ==,
-      }
-
-  '@svg-use/react@1.0.0':
-    resolution:
-      {
-        integrity: sha512-5LhqGm8jw3C3g7K6FoVaDQAXUEL73qJZzzLfSMuV419prsldDR3IV1cy0DDOT5cxH+BGXtOYjbrYQWjE6U1UUw==,
-      }
-    peerDependencies:
-      react: ^18 || ^19
-      react-dom: ^18 || ^19
-
-  '@svg-use/webpack@1.0.0':
-    resolution:
-      {
-        integrity: sha512-RzZ6l8hcP6RZLcLN6tDTXcthSWCHG/J3DmqeZpgE1ulGKun1f9T39wd4atZD+AxKdsxYICfQsr69BMXp9IwQXw==,
-      }
-    peerDependencies:
-      '@svg-use/react': ^1.0.0
-    peerDependenciesMeta:
-      '@svg-use/react':
-        optional: true
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0':
     resolution:
@@ -2091,12 +2055,6 @@ packages:
     resolution:
       {
         integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==,
-      }
-
-  '@types/xast@2.0.4':
-    resolution:
-      {
-        integrity: sha512-6Q6HWhHXR5EEKcxgF5YBW5XPAAtCi/GgyCWHx6wR7dZTXF5rv2B2fm0hgpSscJqaVDVm6n1DAVbsM8RSM5PlMw==,
       }
 
   '@typescript-eslint/eslint-plugin@8.31.1':
@@ -4570,12 +4528,11 @@ packages:
       }
     engines: { node: '>=18.0.0' }
 
-  loader-utils@3.3.1:
+  load-script@1.0.0:
     resolution:
       {
-        integrity: sha512-FMJTLMXfCLMLfJxcX9PFqX5qD88Z5MRGaZCVzfuqeZSPsyiBzs+pahDQjbIWz2QIzPZz0NX9Zy4FX3lmK6YHIg==,
+        integrity: sha512-kPEjMFtZvwL9TaZo0uZ2ml+Ye9HUMmPwbYRJ324qF9tqMejwykJ5ggTyvzmrbBeapCAbk98BSbTeovHEEP1uCA==,
       }
-    engines: { node: '>= 12.13.0' }
 
   local-pkg@1.1.1:
     resolution:
@@ -4748,6 +4705,12 @@ packages:
     resolution:
       {
         integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==,
+      }
+
+  memoize-one@5.2.1:
+    resolution:
+      {
+        integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==,
       }
 
   merge-stream@2.0.0:
@@ -5495,11 +5458,25 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
+  react-fast-compare@3.2.2:
+    resolution:
+      {
+        integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==,
+      }
+
   react-is@16.13.1:
     resolution:
       {
         integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==,
       }
+
+  react-player@2.16.0:
+    resolution:
+      {
+        integrity: sha512-mAIPHfioD7yxO0GNYVFD1303QFtI3lyyQZLY229UEAp/a10cSW+hPcakg0Keq8uWJxT2OiT/4Gt+Lc9bD6bJmQ==,
+      }
+    peerDependencies:
+      react: '>=16.6.0'
 
   react@19.1.0:
     resolution:
@@ -6282,24 +6259,6 @@ packages:
         integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==,
       }
 
-  vfile-location@5.0.3:
-    resolution:
-      {
-        integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==,
-      }
-
-  vfile-message@4.0.2:
-    resolution:
-      {
-        integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==,
-      }
-
-  vfile@6.0.3:
-    resolution:
-      {
-        integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==,
-      }
-
   vue-eslint-parser@10.1.3:
     resolution:
       {
@@ -6381,12 +6340,6 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-
-  xast-util-from-xml@4.0.0:
-    resolution:
-      {
-        integrity: sha512-Pwj6Bw5XARduMeTWpeEfmfgT8/Ma3oiMI4bBIRzCd7GH26A/dn3x7jDc2BHBCQxxdQniTh0MjVUYbjaj4Ljb+Q==,
-      }
 
   xml-name-validator@4.0.0:
     resolution:
@@ -7607,8 +7560,6 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@rgrove/parse-xml@4.2.0': {}
-
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.11.0': {}
@@ -7624,24 +7575,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  '@svg-use/core@1.0.0':
-    dependencies:
-      svgo: 3.3.2
-      unist-util-visit: 5.0.0
-      xast-util-from-xml: 4.0.0
-
-  '@svg-use/react@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
-    dependencies:
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
-
-  '@svg-use/webpack@1.0.0(@svg-use/react@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))':
-    dependencies:
-      '@svg-use/core': 1.0.0
-      loader-utils: 3.3.1
-    optionalDependencies:
-      '@svg-use/react': 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0(@babel/core@7.27.1)':
     dependencies:
@@ -7865,10 +7798,6 @@ snapshots:
       csstype: 3.1.3
 
   '@types/unist@3.0.3': {}
-
-  '@types/xast@2.0.4':
-    dependencies:
-      '@types/unist': 3.0.3
 
   '@typescript-eslint/eslint-plugin@8.31.1(@typescript-eslint/parser@8.31.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
@@ -9609,7 +9538,7 @@ snapshots:
       rfdc: 1.4.1
       wrap-ansi: 9.0.0
 
-  loader-utils@3.3.1: {}
+  load-script@1.0.0: {}
 
   local-pkg@1.1.1:
     dependencies:
@@ -9775,6 +9704,8 @@ snapshots:
   mdn-data@2.0.28: {}
 
   mdn-data@2.0.30: {}
+
+  memoize-one@5.2.1: {}
 
   merge-stream@2.0.0: {}
 
@@ -10263,7 +10194,18 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
+  react-fast-compare@3.2.2: {}
+
   react-is@16.13.1: {}
+
+  react-player@2.16.0(react@19.1.0):
+    dependencies:
+      deepmerge: 4.3.1
+      load-script: 1.0.0
+      memoize-one: 5.2.1
+      prop-types: 15.8.1
+      react: 19.1.0
+      react-fast-compare: 3.2.2
 
   react@19.1.0: {}
 
@@ -10813,21 +10755,6 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vfile-location@5.0.3:
-    dependencies:
-      '@types/unist': 3.0.3
-      vfile: 6.0.3
-
-  vfile-message@4.0.2:
-    dependencies:
-      '@types/unist': 3.0.3
-      unist-util-stringify-position: 4.0.0
-
-  vfile@6.0.3:
-    dependencies:
-      '@types/unist': 3.0.3
-      vfile-message: 4.0.2
-
   vue-eslint-parser@10.1.3(eslint@9.25.1(jiti@2.4.2)):
     dependencies:
       debug: 4.4.0
@@ -10914,13 +10841,6 @@ snapshots:
       strip-ansi: 7.1.0
 
   ws@7.5.10: {}
-
-  xast-util-from-xml@4.0.0:
-    dependencies:
-      '@rgrove/parse-xml': 4.2.0
-      '@types/xast': 2.0.4
-      vfile-location: 5.0.3
-      vfile-message: 4.0.2
 
   xml-name-validator@4.0.0: {}
 
