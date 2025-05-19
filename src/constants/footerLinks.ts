@@ -70,6 +70,16 @@ export const footerLinks = [
     ],
   },
   {
+    title: 'Support',
+    href: '/support',
+    pathes: [
+      {
+        name: 'Contact Us',
+        path: '#contact-us',
+      },
+    ],
+  },
+  {
     title: 'Subscription',
     href: '/subscription',
     pathes: [
@@ -80,16 +90,6 @@ export const footerLinks = [
       {
         name: 'Features',
         path: '#features',
-      },
-    ],
-  },
-  {
-    title: 'Support',
-    href: '/support',
-    pathes: [
-      {
-        name: 'Contact Us',
-        path: '#contact-us',
       },
     ],
   },

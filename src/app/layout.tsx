@@ -33,7 +33,21 @@ const manrope = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Stream Vibe',
+  title: {
+    default: 'StreamVibe',
+    template: '%s - StreamVibe',
+  },
+  description:
+    'StreamVibe - Your ultimate destination for streaming movies, TV shows, and exclusive originals! Dive into a world of endless entertainment with our vast library of blockbuster hits, binge-worthy series, and curated playlists. Enjoy seamless streaming in HD, personalized recommendations, and offline viewing on any device. Join StreamVibe today and vibe with your favorite stories anytime, anywhere!',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+        sizes: 'any',
+      },
+    ],
+  },
 }
 
 export default async function RootLayout({
