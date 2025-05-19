@@ -4,7 +4,7 @@ import * as motion from 'motion/react-client'
 
 function DeviceCard({ device }: { device: Device }) {
   return (
-    <div className="laptop:p-10 desktop:p-12.5 from-red-45/10 to-black-06 bg-black-06 border-black-15 rounded-[10px] border bg-linear-[225deg] p-6">
+    <div className="laptop:p-10 desktop:p-12.5 from-red-45/10 to-black-06 bg-black-06 border-black-15 rounded-[10px] border bg-linear-225 p-6">
       <div className="flex items-center gap-2.5">
         <div className="bg-black-08 border-black-12 laptop:p-3 laptop:rounded-[10px] desktop:p-4 desktop:rounded-xl rounded-lg border p-2.5">
           <device.icon

@@ -15,9 +15,9 @@ function genreComponent(genre: GenreWithMovies) {
       key={genre.id}
       className="bg-black-10 border-black-15 laptop:p-6 desktop:p-7.5 group mx-auto block w-fit rounded-[10px] border p-5"
     >
-      <div className="grid w-fit grid-cols-2 gap-[5px] mask-b-from-10%">
+      <div className="grid w-fit grid-cols-2 gap-1.25 mask-b-from-10%">
         {genre.movies.slice(0, 4).map(movie => (
-          <div className="w-full min-w-[70px]" key={movie.id}>
+          <div className="w-full min-w-17.5" key={movie.id}>
             <Image
               src={getImageUrl('poster', 'w154', movie.poster_path)}
               alt={movie.title}

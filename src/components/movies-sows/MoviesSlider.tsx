@@ -14,7 +14,7 @@ import { PlayIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useIsClient, useToggle } from 'usehooks-ts'
+import { useIsClient, useScrollLock, useToggle } from 'usehooks-ts'
 import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { IconSwitcher } from '@/components/ui/IconSwitcher'
@@ -28,9 +28,16 @@ function MoviesSlider({
   const isClient = useIsClient()
   const [trailerUrl, setTrailerUrl] = useState<string | null>(null)
   const [isMuted, setIsMuted] = useToggle(false)
+  const { lock, unlock } = useScrollLock()
 
-  const handlePlay = (url: string | null) => {
+  const handlePlay = (url: string) => {
     setTrailerUrl(url)
+    lock()
+  }
+
+  const handleClose = () => {
+    setTrailerUrl(null)
+    unlock()
   }
 
   return (
@@ -52,11 +59,11 @@ function MoviesSlider({
               src={getImageUrl('backdrop', 'original', movie.backdrop_path)}
               alt={movie.title}
               fill
-              className="z-1 object-cover object-center"
+              className="object-cover object-center"
               priority
             />
 
-            <div className="tablet:px-10 desktop:px-12.5 tablet:gap-6 desktop:gap-7.5 absolute right-0 bottom-0 left-0 z-3 flex w-full flex-col gap-5 px-6 pb-4">
+            <div className="tablet:px-10 desktop:px-12.5 tablet:gap-6 desktop:gap-7.5 absolute right-0 bottom-0 left-0 z-2 flex w-full flex-col gap-5 px-6 pb-4">
               <div>
                 <h3 className="title text-center">{movie.title}</h3>
                 <p className="tablet:block description desktop:mt-4 mt-2 hidden text-center">
@@ -98,7 +105,7 @@ function MoviesSlider({
               </div>
             </div>
 
-            <div className="from-black-08 absolute inset-0 z-2 bg-gradient-to-t to-transparent"></div>
+            <div className="from-black-08 absolute inset-0 z-1 bg-gradient-to-t to-transparent"></div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -106,20 +113,20 @@ function MoviesSlider({
       <AnimatePresence>
         {trailerUrl && (
           <motion.div
-            className="bg-black-08/80 fixed inset-0 z-100 flex items-center justify-center backdrop-blur-md"
+            className="bg-black-08/80 fixed inset-0 z-6 flex items-center justify-center backdrop-blur-md"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
             onClick={(e) => {
               if (e.target === e.currentTarget)
-                setTrailerUrl(null)
+                handleClose()
             }}
           >
             <button
               type="button"
               className="absolute top-4 right-4"
-              onClick={() => setTrailerUrl(null)}
+              onClick={() => handleClose()}
               aria-label="Close"
             >
               <XMarkIcon className="h-10 w-10 text-white" />

@@ -3,7 +3,7 @@ import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 function Buttons({ isMobile = false }) {
   if (!isMobile) {
     return (
-      <div className="laptop:flex hidden cursor-pointer gap-4">
+      <div className="tablet:flex hidden cursor-pointer gap-4">
         <MagnifyingGlassIcon className="hover:stroke-red-55 w-6 transition-all duration-300 hover:scale-105" />
         <BellIcon className="hover:stroke-red-55 w-6 transition-all duration-300 hover:scale-105" />
       </div>

@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <nav>
-      <div className="bg-black-06 border-black-12 laptop:flex relative hidden items-center rounded-lg border-[3px] px-6 py-2">
+      <div className="bg-black-06 border-black-12 tablet:flex relative hidden items-center rounded-lg border-3 px-6 py-2">
         {routes.map((route) => {
           const isActive = route.pathname === pathname
 
@@ -31,7 +31,7 @@ function Navbar() {
                 isActive ? 'text-white' : 'text-gray-75 hover:text-gray-90',
               )}
             >
-              <p className="relative z-10">{route.name}</p>
+              <p className="relative z-1">{route.name}</p>
               {isActive && (
                 <motion.div
                   className="bg-black-10 absolute inset-0 rounded-lg"

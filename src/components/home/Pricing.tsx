@@ -66,7 +66,7 @@ function Pricing() {
             onClick={() => setPlan('monthly')}
             className={cn(plan === 'monthly' && 'text-white!')}
           >
-            <p className="relative z-10">Monthly</p>
+            <p className="relative z-1">Monthly</p>
             {plan === 'monthly' && (
               <motion.div
                 className="bg-black-12 desktop:rounded-[10px] absolute inset-0 rounded-lg"
@@ -84,7 +84,7 @@ function Pricing() {
             onClick={() => setPlan('yearly')}
             className={cn(plan === 'yearly' && 'text-white!')}
           >
-            <p className="relative z-10">Yearly</p>
+            <p className="relative z-1">Yearly</p>
             {plan === 'yearly' && (
               <motion.div
                 className="bg-black-12 desktop:rounded-[10px] absolute inset-0 rounded-lg"

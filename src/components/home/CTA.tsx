@@ -9,17 +9,14 @@ function CTA() {
           backgroundImage: `url(${ctaBackground.src})`,
         }}
       >
-        <div className="relative z-10">
+        <div className="relative">
           <h2 className="title text-center">Start your free trial today!</h2>
           <p className="description desktop:mt-3.5 mt-2.5 text-center">
             This is a clear and concise call to action that encourages users to
             sign up for a free trial of StreamVibe.
           </p>
         </div>
-        <button
-          type="button"
-          className="button laptop:mt-0 relative z-10 mt-12.5"
-        >
+        <button type="button" className="button laptop:mt-0 relative mt-12.5">
           Start a Free Trail
         </button>
       </div>

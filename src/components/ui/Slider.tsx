@@ -137,7 +137,7 @@ export default function Slider({
       <div
         className={cn(
           mobilePaginationClass,
-          'laptop:hidden bg-black-20 mx-auto mt-6 flex max-w-[70%] justify-center rounded-l-full rounded-r-full',
+          'laptop:hidden bg-black-20 mx-auto mt-6 flex max-w-7/10 justify-center rounded-l-full rounded-r-full',
         )}
       >
       </div>

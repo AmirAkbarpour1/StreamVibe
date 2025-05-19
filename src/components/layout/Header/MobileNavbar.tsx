@@ -1,11 +1,10 @@
 'use client'
 
 import { AnimatePresence, motion } from 'motion/react'
-import { useIsClient, useToggle } from 'usehooks-ts'
+import { useScrollLock, useToggle } from 'usehooks-ts'
 import Link from 'next/link'
 import Buttons from '@/components/layout/Header/Buttons'
 import { cn } from '@/lib/cn'
-import { createPortal } from 'react-dom'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 
@@ -25,7 +24,7 @@ function MenuToggleButton({
     <button
       onClick={toggle}
       type="button"
-      className="bg-black-10 border-black-15 laptop:hidden flex h-12 w-12 items-center justify-center rounded-md border-[3px]"
+      className="bg-black-10 border-black-15 tablet:hidden relative z-5 flex h-12 w-12 items-center justify-center rounded-md border-3"
       aria-label={isOpen ? 'Close menu' : 'Open menu'}
     >
       <AnimatePresence mode="wait" initial={false}>
@@ -79,7 +78,7 @@ function MobileNavItem({
       >
         <p
           className={cn(
-            'desktop:text-lg relative z-10',
+            'desktop:text-lg relative z-1',
             isActive ? 'font-medium text-white' : 'text-gray-75',
           )}
         >
@@ -108,22 +107,18 @@ function MobileMenu({
   toggle: () => void
 }) {
   const pathname = usePathname()
-  const isClient = useIsClient()
 
-  if (!isClient)
-    return null
-
-  return createPortal(
+  return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="laptop:hidden bg-black-06 fixed inset-0 z-40"
+          className="tablet:hidden bg-black-06 fixed inset-0 z-4"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -20, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 250 }}
         >
-          <div className="mt-[102px] flex flex-col gap-2 p-4">
+          <div className="mt-25.5 flex flex-col gap-2 p-4">
             {routes.map((route, index) => (
               <MobileNavItem
                 key={route.pathname}
@@ -146,18 +141,31 @@ function MobileMenu({
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>,
-    document.body,
+    </AnimatePresence>
   )
 }
 
 function MobileNavbar({ routes }: { routes: Route[] }) {
   const [isOpen, toggle] = useToggle()
+  const { lock, unlock } = useScrollLock({
+    autoLock: false,
+  })
+
+  const toggleMenu = () => {
+    if (!isOpen) {
+      lock()
+      window.scrollTo(0, 0)
+    }
+    else {
+      unlock()
+    }
+    toggle()
+  }
 
   return (
     <>
-      <MenuToggleButton isOpen={isOpen} toggle={toggle} />
-      <MobileMenu isOpen={isOpen} routes={routes} toggle={toggle} />
+      <MenuToggleButton isOpen={isOpen} toggle={toggleMenu} />
+      <MobileMenu isOpen={isOpen} routes={routes} toggle={toggleMenu} />
     </>
   )
 }

@@ -3,9 +3,9 @@ import Streamvibe from '@/assets/svgs/streamvibe.svg'
 function Logo() {
   return (
     <Streamvibe
-      width={116.08}
+      width={115.5}
       height={35}
-      className="laptop:w-[165.83px] laptop:h-[50px] desktop:w-[199px] desktop:h-[60px]"
+      className="laptop:w-41.5 laptop:h-12.5 desktop:w-50 desktop:h-15 z-5"
     />
   )
 }

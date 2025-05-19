@@ -9,7 +9,7 @@ function HeroSection() {
     <div className="relative">
       <div className="w-full overflow-x-hidden">
         <motion.div
-          className="flex w-[3840px] gap-5"
+          className="flex w-960 gap-5"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
             duration: 30,
@@ -20,7 +20,7 @@ function HeroSection() {
           <Image
             src={heroBackground}
             alt="Background Sliders"
-            className="laptop:h-[700px] desktop:h-[860px] h-[500px] w-auto object-cover"
+            className="laptop:h-175 desktop:h-215 h-125 w-auto object-cover"
             width={1920}
             height={860}
             priority
@@ -28,14 +28,14 @@ function HeroSection() {
           <Image
             src={heroBackground}
             alt="Background Sliders"
-            className="laptop:h-[700px] desktop:h-[860px] h-[500px] w-auto object-cover"
+            className="laptop:h-175 desktop:h-215 h-125 w-auto object-cover"
             width={1920}
             height={860}
           />
           <Image
             src={heroBackground}
             alt="Background Sliders"
-            className="laptop:h-[700px] desktop:h-[860px] h-[500px] w-auto object-cover"
+            className="laptop:h-175 desktop:h-215 h-125 w-auto object-cover"
             width={1920}
             height={860}
           />
@@ -54,7 +54,7 @@ function HeroSection() {
           alt="StreamVibe"
           width={200}
           height={200}
-          className="laptop:w-[300px] desktop:w-[470px]"
+          className="laptop:w-75 desktop:w-117.5"
           priority
         />
         <h1 className="laptop:text-5xl desktop:text-6xl text-center text-[28px] font-bold text-white drop-shadow">
