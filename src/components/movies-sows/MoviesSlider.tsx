@@ -28,7 +28,9 @@ function MoviesSlider({
   const isClient = useIsClient()
   const [trailerUrl, setTrailerUrl] = useState<string | null>(null)
   const [isMuted, setIsMuted] = useToggle(false)
-  const { lock, unlock } = useScrollLock()
+  const { lock, unlock } = useScrollLock({
+    autoLock: false,
+  })
 
   const handlePlay = (url: string) => {
     setTrailerUrl(url)
