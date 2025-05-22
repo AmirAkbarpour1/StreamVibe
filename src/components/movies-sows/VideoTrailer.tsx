@@ -2,6 +2,8 @@ import tmdb from '@/services/tmdb'
 import withErrorHandling from '@/services/withErrorHandling'
 import type { Movie, MovieWithTrailer, Video } from '@/types/movieTypes'
 import MoviesSlider from '@/components/movies-sows/MoviesSlider'
+import { getImageUrl } from '@/constants/tmdbImages'
+import getbase64 from '@/lib/getbase64'
 
 async function VideoTrailer() {
   const moviesWithTrailer = await withErrorHandling(async () => {
@@ -14,22 +16,20 @@ async function VideoTrailer() {
     const moviesWithTrailers: MovieWithTrailer[] = (
       await Promise.all(
         movies.map(async (movie) => {
-          try {
-            const videosResponse = await tmdb(`movie/${movie.id}/videos`)
-            const trailer = videosResponse.results.find(
-              (vid: Video) => vid.site === 'YouTube' && vid.type === 'Trailer',
-            )
-            if (!trailer)
-              return null
-            const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`
-            return { ...movie, trailerUrl }
-          }
-          catch {
+          const videosResponse = await tmdb(`movie/${movie.id}/videos`)
+          const trailer = videosResponse.results.find(
+            (vid: Video) => vid.site === 'YouTube' && vid.type === 'Trailer',
+          )
+          if (!trailer)
             return null
-          }
+          const trailerUrl = `https://www.youtube.com/watch?v=${trailer.key}`
+          const blurBackdrop = await getbase64(
+            getImageUrl('backdrop', 'original', movie.backdrop_path),
+          )
+          return { ...movie, trailerUrl, blurBackdrop }
         }),
       )
-    ).filter((movie): movie is MovieWithTrailer => movie !== null)
+    ).filter(movie => movie !== null)
 
     return moviesWithTrailers
   })

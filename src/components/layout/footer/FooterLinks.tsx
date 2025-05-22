@@ -13,13 +13,13 @@ function FooterLinks() {
             {footerLink.title}
           </Link>
           <ul className="laptop:mt-5 laptop:gap-2.5 desktop:mt-6 desktop:gap-3.5 mt-4 flex flex-col gap-2">
-            {footerLink.pathes.map(path => (
-              <li key={path.name}>
+            {footerLink.sections.map(section => (
+              <li key={section.name}>
                 <Link
-                  href={`${footerLink.href}${path.path}`}
+                  href={`${footerLink.href}#${section.name}`}
                   className="description hover:text-red-55 font-medium transition-all duration-300 hover:scale-105"
                 >
-                  {path.name}
+                  {section.name}
                 </Link>
               </li>
             ))}

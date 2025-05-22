@@ -6,90 +6,90 @@ export const footerLinks = [
   {
     title: 'Home',
     href: '/',
-    pathes: [
+    sections: [
       {
         name: 'Categories',
-        path: '#categories',
+        id: 'categories',
       },
       {
         name: 'Devices',
-        path: '#devices',
+        id: 'devices',
       },
       {
         name: 'FAQ',
-        path: '#FAQ',
+        id: 'FAQ',
       },
       {
         name: 'Pricing',
-        path: '#pricing',
+        id: 'pricing',
       },
     ],
   },
   {
     title: 'Movies',
     href: '/movies-shows?type=movie',
-    pathes: [
+    sections: [
       {
         name: 'Gernes',
-        path: '#gernes',
+        id: 'gernes',
       },
       {
         name: 'Trending',
-        path: '#trending',
+        id: 'trending',
       },
       {
         name: 'New Release',
-        path: '#new-release',
+        id: 'new-release',
       },
       {
         name: 'Popular',
-        path: '#popular',
+        id: 'popular',
       },
     ],
   },
   {
     title: 'Shows',
     href: '/movies-shows?type=show',
-    pathes: [
+    sections: [
       {
         name: 'Gernes',
-        path: '#gernes',
+        id: 'gernes',
       },
       {
         name: 'Trending',
-        path: '#trending',
+        id: 'trending',
       },
       {
         name: 'New Release',
-        path: '#new-release',
+        id: 'new-release',
       },
       {
         name: 'Popular',
-        path: '#popular',
+        id: 'popular',
       },
     ],
   },
   {
     title: 'Support',
     href: '/support',
-    pathes: [
+    sections: [
       {
         name: 'Contact Us',
-        path: '#contact-us',
+        id: 'contact-us',
       },
     ],
   },
   {
     title: 'Subscription',
     href: '/subscription',
-    pathes: [
+    sections: [
       {
         name: 'Plans',
-        path: '#plans',
+        id: 'plans',
       },
       {
         name: 'Features',
-        path: '#features',
+        id: 'features',
       },
     ],
   },

@@ -46,7 +46,7 @@ function MoviesSlider({
     <div className="relative">
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        loop
         className={cn(
           'tablet:h-175 desktop:h-200 h-125 w-full rounded-xl',
           !isClient && 'opacity-0',
@@ -62,7 +62,8 @@ function MoviesSlider({
               alt={movie.title}
               fill
               className="object-cover object-center"
-              priority
+              placeholder="blur"
+              blurDataURL={movie.blurBackdrop}
             />
 
             <div className="tablet:px-10 desktop:px-12.5 tablet:gap-6 desktop:gap-7.5 absolute right-0 bottom-0 left-0 z-2 flex w-full flex-col gap-5 px-6 pb-4">

@@ -7,6 +7,7 @@ import localFont from 'next/font/local'
 import { cn } from '@/lib/cn'
 import Header from '@/components/layout/Header/Header'
 import Footer from '@/components/layout/footer/Footer'
+import ScrollToTop from '@/components/common/ScrollToTop'
 
 const manrope = localFont({
   src: [
@@ -61,6 +62,7 @@ export default async function RootLayout({
         <Header />
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   )

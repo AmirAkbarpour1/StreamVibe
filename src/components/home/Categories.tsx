@@ -1,12 +1,23 @@
 import tmdb from '@/services/tmdb'
 import withErrorHandling from '@/services/withErrorHandling'
-import type { Genre, GenreWithMovies } from '@/types/movieTypes'
+import type { Genre, Movie } from '@/types/movieTypes'
 import Slider from '@/components/ui/Slider'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { getImageUrl } from '@/constants/tmdbImages'
 import * as motion from 'motion/react-client'
 import Link from 'next/link'
+import getbase64 from '@/lib/getbase64'
+
+interface MovieWithBlurPoster extends Movie {
+  blurPoster: string
+}
+
+interface GenreWithMovies {
+  genre: string
+  id: number
+  movies: MovieWithBlurPoster[]
+}
 
 function genreComponent(genre: GenreWithMovies) {
   return (
@@ -24,6 +35,8 @@ function genreComponent(genre: GenreWithMovies) {
               width={154}
               height={231}
               className="rounded-md"
+              placeholder="blur"
+              blurDataURL={movie.blurPoster}
             />
           </div>
         ))}
@@ -52,10 +65,19 @@ async function Categories() {
           },
         })
 
+        const movies: MovieWithBlurPoster[] = await Promise.all(
+          moviesResponse.results.map(async (movie: Movie) => ({
+            ...movie,
+            blurPoster: await getbase64(
+              getImageUrl('poster', 'w92', movie.poster_path),
+            ),
+          })),
+        )
+
         return {
           genre: genre.name,
           id: genre.id,
-          movies: moviesResponse.results.slice(0, 4),
+          movies: movies.slice(0, 4),
         }
       }),
     )
