@@ -4,10 +4,10 @@ import type { Genre, Movie } from '@/types/movieTypes'
 import Slider from '@/components/ui/Slider'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import { getImageUrl } from '@/constants/tmdbImages'
+import { getImageUrl } from '@/utils/tmdbImages'
 import * as motion from 'motion/react-client'
 import Link from 'next/link'
-import getbase64 from '@/lib/getbase64'
+import getbase64 from '@/utils/getbase64'
 
 interface MovieWithBlurPoster extends Movie {
   blurPoster: string

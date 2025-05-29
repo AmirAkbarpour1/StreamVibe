@@ -1,4 +1,4 @@
-import { footerLinks, socialLinks } from '@/constants/footerLinks'
+import { footerLinks, socialLinks } from '@/constants/layout/footer/footerLinks'
 import Link from 'next/link'
 
 function FooterLinks() {

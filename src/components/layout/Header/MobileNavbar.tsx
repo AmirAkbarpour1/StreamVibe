@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useScrollLock, useToggle } from 'usehooks-ts'
 import Link from 'next/link'
 import Buttons from '@/components/layout/Header/Buttons'
-import { cn } from '@/lib/cn'
+import cn from '@/utils/cn'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from 'next/navigation'
 

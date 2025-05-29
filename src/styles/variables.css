@@ -33,6 +33,10 @@
   --color-gray-95: #f1f1f3;
   --color-gray-97: #f7f7f8;
   --color-gray-99: #fcfcfd;
+
+  --animate-spin90: spin90 2s linear infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+  --animate-fadeIn: fadeIn 1.5s ease forwards;
 }
 
 /* Breakpoints */
@@ -51,5 +55,41 @@
 @custom-variant desktop {
   @media (width > 1920px) {
     @slot;
+  }
+}
+
+@keyframes spin90 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px #e50000);
+    transform: scale(1);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 12px #ff1919);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shakeColor {
+  0%,
+  100% {
+    color: var(--color-red-55);
+    text-shadow: 0 0 5px var(--color-red-55);
+  }
+
+  50% {
+    color: var(--color-red-80);
+    text-shadow: 0 0 15px var(--color-red-80);
   }
 }

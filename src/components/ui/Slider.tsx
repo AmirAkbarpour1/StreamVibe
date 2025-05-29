@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { Navigation, Pagination } from 'swiper/modules'
-import { cn } from '@/lib/cn'
+import cn from '@/utils/cn'
 import { useIsClient } from 'usehooks-ts'
 
 interface SliderProps {

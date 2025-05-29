@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { cn } from '@/lib/cn'
-import { pricing } from '@/constants/pricing'
+import cn from '@/utils/cn'
+import { pricing } from '@/constants/home/pricing'
 
 function PricingCard({
   plan,

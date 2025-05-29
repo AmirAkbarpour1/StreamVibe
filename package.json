@@ -1,15 +1,17 @@
 {
   "name": "streamvibe",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0",
+  "author": {
+    "name": "Amir Akbarpour",
+    "email": "contact@amirakbarpour.com"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write .",
     "lint": "pnpx eslint",
-    "lint:fix": "pnpx eslint --fix",
-    "prettier": "prettier --write .",
-    "prepare": "husky && husky install"
+    "lint:fix": "pnpx eslint --fix"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

@@ -1,13 +1,14 @@
 'use cache'
 
-import type { Metadata } from 'next'
 import '@/styles/variables.css'
 import '@/styles/main.css'
 import localFont from 'next/font/local'
-import { cn } from '@/lib/cn'
+import cn from '@/utils/cn'
 import Header from '@/components/layout/Header/Header'
 import Footer from '@/components/layout/footer/Footer'
 import ScrollToTop from '@/components/common/ScrollToTop'
+import { Suspense } from 'react'
+import Loading from '@/components/common/Loading'
 
 const manrope = localFont({
   src: [
@@ -33,7 +34,7 @@ const manrope = localFont({
   variable: '--font-manrope',
 })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: {
     default: 'StreamVibe',
     template: '%s - StreamVibe',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function RootLayout({
+async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -60,10 +61,12 @@ export default async function RootLayout({
     <html lang="en">
       <body className={cn(manrope.variable)}>
         <Header />
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <Footer />
         <ScrollToTop />
       </body>
     </html>
   )
 }
+
+export default RootLayout

@@ -1,6 +1,6 @@
 'use client'
 
-import { accordionItems } from '@/constants/accordionItems'
+import { accordionItems } from '@/constants/home/accordionItems'
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'

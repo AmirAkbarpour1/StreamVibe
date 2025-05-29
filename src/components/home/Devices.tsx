@@ -1,5 +1,5 @@
-import { devices } from '@/constants/devices'
-import type { Device } from '@/constants/devices'
+import { devices } from '@/constants/home/devices'
+import type { Device } from '@/constants/home/devices'
 import * as motion from 'motion/react-client'
 
 function DeviceCard({ device }: { device: Device }) {

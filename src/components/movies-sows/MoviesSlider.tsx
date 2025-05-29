@@ -1,9 +1,11 @@
 'use client'
 
-import { getImageUrl } from '@/constants/tmdbImages'
-import { cn } from '@/lib/cn'
+import { getImageUrl } from '@/utils/tmdbImages'
+import cn from '@/utils/cn'
 import type { MovieWithTrailer } from '@/types/movieTypes'
 import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
   HandThumbUpIcon,
   PlusIcon,
   SpeakerWaveIcon,
@@ -19,6 +21,7 @@ import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { IconSwitcher } from '@/components/ui/IconSwitcher'
 import { AnimatePresence, motion } from 'motion/react'
+import { Navigation, Pagination } from 'swiper/modules'
 
 function MoviesSlider({
   moviesWithTrailer,
@@ -47,16 +50,26 @@ function MoviesSlider({
       <Swiper
         slidesPerView={1}
         loop
+        modules={[Pagination, Navigation]}
+        navigation={{
+          nextEl: '.swiper-button-next-video-trailer',
+          prevEl: '.swiper-button-prev-video-trailer',
+        }}
+        pagination={{
+          el: '.swiper-pagination-video-trailer',
+          clickable: true,
+          type: 'bullets',
+          bulletClass:
+            'bg-black-20 w-3.5 h-1 rounded-full transition-all duration-300 cursor-pointer',
+          bulletActiveClass: 'bg-red-45 w-4.5',
+        }}
         className={cn(
-          'tablet:h-175 desktop:h-200 h-125 w-full rounded-xl',
+          'tablet:h-175 desktop:h-200 tablet:px-10 desktop:px-12.5 desktop:pb-5 relative h-125 w-full rounded-xl px-6 pb-4',
           !isClient && 'opacity-0',
         )}
       >
         {moviesWithTrailer.map(movie => (
-          <SwiperSlide
-            key={movie.id}
-            className="tablet:px-10 desktop:px-12.5 desktop:pb-5 relative px-6 pb-4"
-          >
+          <SwiperSlide key={movie.id}>
             <Image
               src={getImageUrl('backdrop', 'original', movie.backdrop_path)}
               alt={movie.title}
@@ -66,7 +79,7 @@ function MoviesSlider({
               blurDataURL={movie.blurBackdrop}
             />
 
-            <div className="tablet:px-10 desktop:px-12.5 tablet:gap-6 desktop:gap-7.5 absolute right-0 bottom-0 left-0 z-2 flex w-full flex-col gap-5 px-6 pb-4">
+            <div className="tablet:px-10 desktop:px-12.5 tablet:gap-6 desktop:gap-7.5 desktop:bottom-31.5 tablet:bottom-26 absolute right-0 bottom-4 left-0 z-2 flex w-full flex-col gap-5 px-6">
               <div>
                 <h3 className="title text-center">{movie.title}</h3>
                 <p className="tablet:block description desktop:mt-4 mt-2 hidden text-center">
@@ -111,6 +124,27 @@ function MoviesSlider({
             <div className="from-black-08 absolute inset-0 z-1 bg-gradient-to-t to-transparent"></div>
           </SwiperSlide>
         ))}
+        <div className="desktop:bottom-5 desktop:px-12.5 tablet:flex absolute bottom-4 z-2 hidden w-full items-center justify-between px-10">
+          <div
+            className={cn(
+              'bg-black-06 desktop:p-3.5 border-black-12 group rounded-lg border p-2.5',
+              'swiper-button-prev-video-trailer',
+              'cursor-pointer transition-all duration-300',
+            )}
+          >
+            <ArrowLeftIcon className="desktop:w-7 group-hover:text-red-55 w-6 transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
+          </div>
+          <div className="swiper-pagination-video-trailer flex items-center gap-2"></div>
+          <div
+            className={cn(
+              'bg-black-06 desktop:p-3.5 border-black-12 group rounded-lg border p-2.5',
+              'swiper-button-next-video-trailer',
+              'cursor-pointer transition-all duration-300',
+            )}
+          >
+            <ArrowRightIcon className="desktop:w-7 group-hover:text-red-55 w-6 transition-all duration-300 group-hover:scale-110 group-[.swiper-button-disabled]:scale-100 group-[.swiper-button-disabled]:text-white" />
+          </div>
+        </div>
       </Swiper>
 
       <AnimatePresence>

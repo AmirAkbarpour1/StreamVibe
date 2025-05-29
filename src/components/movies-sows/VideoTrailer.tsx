@@ -2,8 +2,8 @@ import tmdb from '@/services/tmdb'
 import withErrorHandling from '@/services/withErrorHandling'
 import type { Movie, MovieWithTrailer, Video } from '@/types/movieTypes'
 import MoviesSlider from '@/components/movies-sows/MoviesSlider'
-import { getImageUrl } from '@/constants/tmdbImages'
-import getbase64 from '@/lib/getbase64'
+import { getImageUrl } from '@/utils/tmdbImages'
+import getbase64 from '@/utils/getbase64'
 
 async function VideoTrailer() {
   const moviesWithTrailer = await withErrorHandling(async () => {
